@@ -9,7 +9,7 @@
 //   await db.execute("INSERT INTO users (name, email, password) VALUES (?, ?, ?)", [name, email, password]);
 // };
 
-
+// E-Commerce_Gym__site\gym-supplements-backend\src\models\userModel.ts
 export interface User {
   id?: number;
   name: string;

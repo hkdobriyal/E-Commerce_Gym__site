@@ -16,7 +16,7 @@
 //   }
 // };
 
-
+// E-Commerce_Gym__site\gym-supplements-backend\src\middleware\authMiddleware.ts
 import { Request, Response, NextFunction } from "express";
 import jwt from "jsonwebtoken";
 import pool from "../config/db";
