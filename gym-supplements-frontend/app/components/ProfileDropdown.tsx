@@ -1,51 +1,124 @@
-"use client";
+// // E-Commerce_Gym__site/gym-supplements-frontend/app/components/ProfileDropdown.tsx
+// // import { useRouter } from "next/navigation";
+// // import { useDispatch } from "react-redux";
+// // import { logout } from "../redux/slices/authSlice"; // Ensure correct import
 
-import { useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { RootState } from "../redux/store";
-import { logoutUser } from "../redux/slices/authSlice";
+// // const ProfileDropdown = () => {
+// //   const dispatch = useDispatch();
+// //   const router = useRouter();
+
+// //   const handleLogout = () => {
+// //     dispatch(logout()); // ✅ Correct function name
+// //     localStorage.removeItem("token");
+// //     router.push("/login");
+// //   };
+
+// //   return (
+// //     <div className="profile-dropdown">
+// //       <button onClick={handleLogout}>Logout</button>
+// //     </div>
+// //   );
+// // };
+// // export default ProfileDropdown;
+
+
+// // E-Commerce_Gym__site/gym-supplements-frontend/app/components/ProfileDropdown.tsx
+// import { useRouter } from "next/navigation";
+// import { useDispatch } from "react-redux";
+// import { logout } from "../redux/slices/authSlice"; // Ensure correct import
+
+// const ProfileDropdown = () => {
+//   const dispatch = useDispatch();
+//   const router = useRouter();
+
+//   const handleLogout = () => {
+//     dispatch(logout());
+//     localStorage.removeItem("token");
+//     router.push("/login");
+//   };
+
+//   const handleProfile = () => {
+//     router.push("/profile");
+//   };
+
+//   const handleOrders = () => {
+//     router.push("/orders");
+//   };
+
+//   return (
+//     <div className="profile-dropdown bg-white shadow-md rounded-md p-4">
+//       <button onClick={handleProfile} className="block w-full text-left px-4 py-2 hover:bg-gray-100">
+//         Profile
+//       </button>
+//       <button onClick={handleOrders} className="block w-full text-left px-4 py-2 hover:bg-gray-100">
+//         Orders
+//       </button>
+//       <button onClick={handleLogout} className="block w-full text-left px-4 py-2 hover:bg-gray-100">
+//         Logout
+//       </button>
+//     </div>
+//   );
+// };
+
+// export default ProfileDropdown;
+
+
 import { useRouter } from "next/navigation";
+import { useDispatch } from "react-redux";
+import { logout } from "../redux/slices/authSlice"; // Ensure correct import
+import { motion } from "framer-motion";
+// import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
+// import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
+// import AccountCircleIcon from "@mui/icons-material/AccountCircle";
+// import LoginIcon from "@mui/icons-material/Login"; // Import LoginIcon
+
 
 const ProfileDropdown = () => {
-  const [isOpen, setIsOpen] = useState(false);
-  const user = useSelector((state: RootState) => state.auth.user);
   const dispatch = useDispatch();
   const router = useRouter();
 
   const handleLogout = () => {
-    dispatch(logoutUser());
+    dispatch(logout());
     localStorage.removeItem("token");
     router.push("/login");
   };
 
-  return (
-    <div className="relative">
-      {/* Profile Icon */}
-      <button
-        onClick={() => setIsOpen(!isOpen)}
-        className="p-2 bg-gray-200 rounded-full hover:bg-gray-300 focus:outline-none"
-      >
-        <img src="/images/profile-icon.png" alt="Profile" className="w-10 h-10" />
-      </button>
+  const handleProfile = () => {
+    router.push("/profile");
+  };
 
-      {/* Dropdown Menu */}
-      {isOpen && (
-        <div className="absolute right-0 mt-2 w-48 bg-white border border-gray-200 shadow-lg rounded-lg z-50">
-          <ul className="py-2">
-            <li className="px-4 py-2 text-gray-700 font-medium">{user?.uname}</li>
-            <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer" onClick={() => router.push("/profile")}>
-              Profile
-            </li>
-            <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer" onClick={() => router.push("/orders")}>
-              Orders
-            </li>
-            <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer text-red-500" onClick={handleLogout}>
-              Logout
-            </li>
-          </ul>
-        </div>
-      )}
-    </div>
+  const handleOrders = () => {
+    router.push("/orders");
+  };
+
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: -10 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.3 }}
+      className="absolute top-full right-0 bg-white text-black shadow-lg rounded-lg w-52 z-50"
+    >
+      <ul className="flex flex-col text-base">
+        <li
+          onClick={handleProfile}
+          className="block px-4 py-2 rounded-lg hover:bg-blu hover:text-white"
+        >
+          Profile
+        </li>
+        <li
+          onClick={handleOrders}
+          className="block px-4 py-2 rounded-lg hover:bg-blu hover:text-white"
+        >
+          Orders
+        </li>
+        <li
+          onClick={handleLogout}
+          className="block px-4 py-2 rounded-lg hover:bg-blu hover:text-white"
+        >
+          Logout
+        </li>
+      </ul>
+    </motion.div>
   );
 };
 

@@ -45,8 +45,9 @@
 //     </div>
 //   );
 // };
-
 // export default UserDropdown;
+
+// E-Commerce_Gym__site/gym-supplements-frontend/app/components/UserDropdown.tsx
 "use client";
 
 import Link from "next/link";
