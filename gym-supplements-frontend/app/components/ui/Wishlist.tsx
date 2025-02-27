@@ -54,6 +54,7 @@ export default function Wishlist() {
                   width={80}
                   height={80}
                   className="rounded-lg"
+                  priority
                 />
                 <div className="flex-1">
                   <h3 className="text-lg font-semibold">{item.name}</h3>

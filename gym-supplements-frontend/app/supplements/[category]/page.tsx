@@ -278,6 +278,7 @@ export default function CategoryPage({ params }: CategoryPageProps) {
                       width={140}
                       height={140}
                       className="object-contain"
+                      priority
                     />
                   </Link>
                 </div>

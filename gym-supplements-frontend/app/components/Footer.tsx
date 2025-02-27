@@ -173,6 +173,7 @@ function Footer() {
               width={160}
               height={160}
               className="m-auto lg:m-0 hover:scale-110 transition-transform duration-300"
+              priority
             />
           </Link>
           <div className="flex items-center justify-center lg:justify-start gap-4">
@@ -242,6 +243,7 @@ function Footer() {
                   width={100}
                   height={100}
                   className="border rounded-lg shadow-lg hover:scale-110 transition-transform duration-300"
+                  priority
                 />
               </div>
             </div>

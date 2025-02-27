@@ -12,6 +12,7 @@ function Sponsors() {
           width={150}
           height={150}
           className="hover:invert duration-300 ease-linear"
+          priority
         />
         <Image
           src="/images/sponsors/img-2.png"
@@ -19,6 +20,7 @@ function Sponsors() {
           width={150}
           height={150}
           className="hover:invert duration-300 ease-linear"
+          priority
         />
         <Image
           src="/images/sponsors/img-3.png"
@@ -26,6 +28,7 @@ function Sponsors() {
           width={150}
           height={150}
           className="hover:invert duration-300 ease-linear"
+          priority
         />
         <Image
           src="/images/sponsors/img-4.png"
@@ -33,6 +36,7 @@ function Sponsors() {
           width={150}
           height={150}
           className="hover:invert duration-300 ease-linear"
+          priority
         />
         <Image
           src="/images/sponsors/img-5.png"
@@ -40,6 +44,7 @@ function Sponsors() {
           width={150}
           height={150}
           className="hover:invert duration-300 ease-linear"
+          priority
         />
       </div>
     </section>

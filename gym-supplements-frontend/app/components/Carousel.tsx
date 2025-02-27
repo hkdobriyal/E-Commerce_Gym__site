@@ -101,6 +101,7 @@ const Carousel = () => {
               alt={`Slide ${index}`}
               fill
               className="rounded-lg object-cover shadow-lg"
+              priority
             />
           </motion.div>
         ))}

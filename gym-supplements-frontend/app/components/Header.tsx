@@ -365,7 +365,7 @@
 
 // export default Header;
 
-
+// gym-supplements-frontend\app\components\Header.tsx
 "use client";
 import Image from "next/image";
 import Link from "next/link";
@@ -435,6 +435,7 @@ const Header = () => {
                 width={150}
                 height={150}
                 className="cursor-pointer"
+                priority
               />
             </motion.div>
           </Link>

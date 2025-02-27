@@ -158,8 +158,6 @@
 
 // export default WhoWeAre;
 
-
-
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
@@ -170,7 +168,6 @@ function WhoWeAre() {
     <section id="who-we-are" className="overflow-hidden">
       {/* Background Section */}
       <div className="bg-[url('/images/bg/bg.jpg')] bg-[50%] bg-no-repeat bg-cover px-8 pb-16 lg:pb-24 space-y-8">
-        
         {/* Features Grid */}
         <motion.div
           initial={{ opacity: 0, y: 50 }}
@@ -180,9 +177,21 @@ function WhoWeAre() {
           className="grid grid-cols-1 lg:grid-cols-3 max-w-screen-xl m-auto gap-8 -translate-y-16"
         >
           {[
-            { img: "img-1.png", title: "PROGRESSION", text: "Our team will create a step-by-step plan for you." },
-            { img: "img-2.png", title: "WORKOUT", text: "Get the best workouts to transform your body." },
-            { img: "img-3.png", title: "NUTRITIONS", text: "Personalized meal plans tailored to your goals." }
+            {
+              img: "img-1.png",
+              title: "PROGRESSION",
+              text: "Our team will create a step-by-step plan for you.",
+            },
+            {
+              img: "img-2.png",
+              title: "WORKOUT",
+              text: "Get the best workouts to transform your body.",
+            },
+            {
+              img: "img-3.png",
+              title: "NUTRITIONS",
+              text: "Personalized meal plans tailored to your goals.",
+            },
           ].map((item, index) => (
             <motion.div
               key={index}
@@ -192,7 +201,13 @@ function WhoWeAre() {
               transition={{ duration: 0.5, delay: index * 0.2 }}
               className="bg-white p-8 lg:py-16 flex flex-col items-center text-center gap-4 rounded-[35px] shadow-2xl hover:scale-105 transition-transform duration-500"
             >
-              <Image src={`/images/whoweare/first-grid/${item.img}`} alt={item.title} width={60} height={60} />
+              <Image
+                src={`/images/whoweare/first-grid/${item.img}`}
+                priority
+                alt={item.title}
+                width={60}
+                height={60}
+              />
               <h1 className="font-bold text-2xl">{item.title}</h1>
               <p className="text-[0.95rem]">{item.text}</p>
             </motion.div>
@@ -207,7 +222,10 @@ function WhoWeAre() {
           transition={{ duration: 1 }}
           className="text-center"
         >
-          <Link href="/" className="px-8 py-4 text-white bg-[#3f3f3f] hover:bg-[#ff0336] transition-all duration-300">
+          <Link
+            href="/"
+            className="px-8 py-4 text-white bg-[#3f3f3f] hover:bg-[#ff0336] transition-all duration-300"
+          >
             TAKE A TOUR
           </Link>
         </motion.div>

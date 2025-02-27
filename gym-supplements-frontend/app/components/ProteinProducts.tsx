@@ -1,6 +1,4 @@
-
 // // Gym__website\app\components\ProteinProducts.tsx
-
 
 "use client"; // Needed for animations in Next.js
 import Image from "next/image";
@@ -11,45 +9,223 @@ import { motion } from "framer-motion";
 
 const supplementCategories = {
   "Whey Protein": [
-    { id: 1, name: "ON Gold Standard Whey", price: "₹5,199", oldPrice: "₹6,999", discount: "25%", image: "/images/supplement_img/ON_wheyiso.jpg" },
-    { id: 2, name: "MuscleBlaze Whey Protein", price: "₹3,999", oldPrice: "₹5,299", discount: "24%", image: "/images/supplement_img/Mb_whey_hydro.png" },
-    { id: 3, name: "MyProtein Impact Whey", price: "₹4,499", oldPrice: "₹5,999", discount: "20%", image: "/images/supplement_img/myprotien_wheyiso.jpg" },
-    { id: 4, name: "GNC Pro Performance Whey", price: "₹3,799", oldPrice: "₹4,999", discount: "24%", image: "/images/supplement_img/GNC_wheypro.jpg" },
-    { id: 5, name: "MyProtein Impact Whey", price: "₹4,499", oldPrice: "₹5,999", discount: "20%", image: "/images/supplement_img/myprotien_wheyiso.jpg" },
+    {
+      id: 1,
+      name: "ON Gold Standard Whey",
+      price: "₹5,199",
+      oldPrice: "₹6,999",
+      discount: "25%",
+      image: "/images/supplement_img/ON_wheyiso.jpg",
+    },
+    {
+      id: 2,
+      name: "MuscleBlaze Whey Protein",
+      price: "₹3,999",
+      oldPrice: "₹5,299",
+      discount: "24%",
+      image: "/images/supplement_img/Mb_whey_hydro.png",
+    },
+    {
+      id: 3,
+      name: "MyProtein Impact Whey",
+      price: "₹4,499",
+      oldPrice: "₹5,999",
+      discount: "20%",
+      image: "/images/supplement_img/myprotien_wheyiso.jpg",
+    },
+    {
+      id: 4,
+      name: "GNC Pro Performance Whey",
+      price: "₹3,799",
+      oldPrice: "₹4,999",
+      discount: "24%",
+      image: "/images/supplement_img/GNC_wheypro.jpg",
+    },
+    {
+      id: 5,
+      name: "MyProtein Impact Whey",
+      price: "₹4,499",
+      oldPrice: "₹5,999",
+      discount: "20%",
+      image: "/images/supplement_img/myprotien_wheyiso.jpg",
+    },
   ],
   "Mass Gainers": [
-    { id: 6, name: "ON Serious Mass Gainer", price: "₹4,999", oldPrice: "₹6,499", discount: "23%", image: "/images/supplement_img/ON_massgainer.jpg" },
-    { id: 7, name: "MuscleBlaze Mass Gainer", price: "₹3,499", oldPrice: "₹4,699", discount: "26%", image: "/images/supplement_img/ON-massgainer.jpg" },
-    { id: 8, name: "MuscleBlaze Mass Gainer", price: "₹3,499", oldPrice: "₹4,699", discount: "26%", image: "/images/supplement_img/ON-massgainer.jpg" },
-    { id: 9, name: "BigMuscles Lean Mass Gainer", price: "₹2,999", oldPrice: "₹3,899", discount: "23%", image: "/images/supplement_img/BM_masgainer.jpg" },
-    { id: 10, name: "MuscleBlaze Mass Gainer", price: "₹3,499", oldPrice: "₹4,699", discount: "26%", image: "/images/supplement_img/ON-massgainer.jpg" },
+    {
+      id: 6,
+      name: "ON Serious Mass Gainer",
+      price: "₹4,999",
+      oldPrice: "₹6,499",
+      discount: "23%",
+      image: "/images/supplement_img/ON_massgainer.jpg",
+    },
+    {
+      id: 7,
+      name: "MuscleBlaze Mass Gainer",
+      price: "₹3,499",
+      oldPrice: "₹4,699",
+      discount: "26%",
+      image: "/images/supplement_img/ON-massgainer.jpg",
+    },
+    {
+      id: 8,
+      name: "MuscleBlaze Mass Gainer",
+      price: "₹3,499",
+      oldPrice: "₹4,699",
+      discount: "26%",
+      image: "/images/supplement_img/ON-massgainer.jpg",
+    },
+    {
+      id: 9,
+      name: "BigMuscles Lean Mass Gainer",
+      price: "₹2,999",
+      oldPrice: "₹3,899",
+      discount: "23%",
+      image: "/images/supplement_img/BM_masgainer.jpg",
+    },
+    {
+      id: 10,
+      name: "MuscleBlaze Mass Gainer",
+      price: "₹3,499",
+      oldPrice: "₹4,699",
+      discount: "26%",
+      image: "/images/supplement_img/ON-massgainer.jpg",
+    },
   ],
   "BCAA (Intra-workout)": [
-    { id: 11, name: "Xtend BCAA", price: "₹2,499", oldPrice: "₹3,299", discount: "24%", image: "/images/supplement_img/xtend1.png" },
-    { id: 12, name: "MuscleBlaze BCAA Pro", price: "₹1,999", oldPrice: "₹2,699", discount: "26%", image: "/images/supplement_img/jymBCAA.jpg" },
-    { id: 13, name: "GNC AMP BCAA", price: "₹2,299", oldPrice: "₹3,099", discount: "26%", image: "/images/supplement_img/xtend1.png" },
-    { id: 14, name: "Xtend BCAA", price: "₹2,499", oldPrice: "₹3,299", discount: "24%", image: "/images/supplement_img/xtend1.png" },
-    { id: 15, name: "MuscleBlaze BCAA Pro", price: "₹1,999", oldPrice: "₹2,699", discount: "26%", image: "/images/supplement_img/jymBCAA.jpg" },
+    {
+      id: 11,
+      name: "Xtend BCAA",
+      price: "₹2,499",
+      oldPrice: "₹3,299",
+      discount: "24%",
+      image: "/images/supplement_img/xtend1.png",
+    },
+    {
+      id: 12,
+      name: "MuscleBlaze BCAA Pro",
+      price: "₹1,999",
+      oldPrice: "₹2,699",
+      discount: "26%",
+      image: "/images/supplement_img/jymBCAA.jpg",
+    },
+    {
+      id: 13,
+      name: "GNC AMP BCAA",
+      price: "₹2,299",
+      oldPrice: "₹3,099",
+      discount: "26%",
+      image: "/images/supplement_img/xtend1.png",
+    },
+    {
+      id: 14,
+      name: "Xtend BCAA",
+      price: "₹2,499",
+      oldPrice: "₹3,299",
+      discount: "24%",
+      image: "/images/supplement_img/xtend1.png",
+    },
+    {
+      id: 15,
+      name: "MuscleBlaze BCAA Pro",
+      price: "₹1,999",
+      oldPrice: "₹2,699",
+      discount: "26%",
+      image: "/images/supplement_img/jymBCAA.jpg",
+    },
   ],
   "Pre-Workout": [
-    { id: 16, name: "C4 Pre-Workout", price: "₹2,499", oldPrice: "₹3,199", discount: "22%", image: "/images/supplement_img/c4_preworkout.webp" },
-    { id: 17, name: "MuscleBlaze Pre-Workout Ripped", price: "₹1,999", oldPrice: "₹2,699", discount: "26%", image: "/images/supplement_img/MB_preworkout.webp" },
-    { id: 18, name: "C4 Pre-Workout", price: "₹2,499", oldPrice: "₹3,199", discount: "22%", image: "/images/supplement_img/c4_preworkout.webp" },
-    { id: 19, name: "MuscleBlaze Pre-Workout Ripped", price: "₹1,999", oldPrice: "₹2,699", discount: "26%", image: "/images/supplement_img/MB_preworkout.webp" },
-    { id: 20, name: "C4 Pre-Workout", price: "₹2,499", oldPrice: "₹3,199", discount: "22%", image: "/images/supplement_img/c4_preworkout.webp" },
+    {
+      id: 16,
+      name: "C4 Pre-Workout",
+      price: "₹2,499",
+      oldPrice: "₹3,199",
+      discount: "22%",
+      image: "/images/supplement_img/c4_preworkout.webp",
+    },
+    {
+      id: 17,
+      name: "MuscleBlaze Pre-Workout Ripped",
+      price: "₹1,999",
+      oldPrice: "₹2,699",
+      discount: "26%",
+      image: "/images/supplement_img/MB_preworkout.webp",
+    },
+    {
+      id: 18,
+      name: "C4 Pre-Workout",
+      price: "₹2,499",
+      oldPrice: "₹3,199",
+      discount: "22%",
+      image: "/images/supplement_img/c4_preworkout.webp",
+    },
+    {
+      id: 19,
+      name: "MuscleBlaze Pre-Workout Ripped",
+      price: "₹1,999",
+      oldPrice: "₹2,699",
+      discount: "26%",
+      image: "/images/supplement_img/MB_preworkout.webp",
+    },
+    {
+      id: 20,
+      name: "C4 Pre-Workout",
+      price: "₹2,499",
+      oldPrice: "₹3,199",
+      discount: "22%",
+      image: "/images/supplement_img/c4_preworkout.webp",
+    },
   ],
-  "Creatine": [
-    { id: 21, name: "ON Micronized Creatine", price: "₹1,499", oldPrice: "₹1,999", discount: "25%", image: "/images/supplement_img/ON_creatine.png" },
-    { id: 22, name: "MuscleBlaze Creatine Monohydrate", price: "₹1,299", oldPrice: "₹1,799", discount: "28%", image: "/images/supplement_img/On_creatine.webp" },
-    { id: 23, name: "ON Micronized Creatine", price: "₹1,499", oldPrice: "₹1,999", discount: "25%", image: "/images/supplement_img/ON_creatine.png" },
-    { id: 24, name: "MuscleBlaze Creatine Monohydrate", price: "₹1,299", oldPrice: "₹1,799", discount: "28%", image: "/images/supplement_img/On_creatine.webp" },
-    { id: 25, name: "ON Micronized Creatine", price: "₹1,499", oldPrice: "₹1,999", discount: "25%", image: "/images/supplement_img/ON_creatine.png" },
+  Creatine: [
+    {
+      id: 21,
+      name: "ON Micronized Creatine",
+      price: "₹1,499",
+      oldPrice: "₹1,999",
+      discount: "25%",
+      image: "/images/supplement_img/ON_creatine.png",
+    },
+    {
+      id: 22,
+      name: "MuscleBlaze Creatine Monohydrate",
+      price: "₹1,299",
+      oldPrice: "₹1,799",
+      discount: "28%",
+      image: "/images/supplement_img/On_creatine.webp",
+    },
+    {
+      id: 23,
+      name: "ON Micronized Creatine",
+      price: "₹1,499",
+      oldPrice: "₹1,999",
+      discount: "25%",
+      image: "/images/supplement_img/ON_creatine.png",
+    },
+    {
+      id: 24,
+      name: "MuscleBlaze Creatine Monohydrate",
+      price: "₹1,299",
+      oldPrice: "₹1,799",
+      discount: "28%",
+      image: "/images/supplement_img/On_creatine.webp",
+    },
+    {
+      id: 25,
+      name: "ON Micronized Creatine",
+      price: "₹1,499",
+      oldPrice: "₹1,999",
+      discount: "25%",
+      image: "/images/supplement_img/ON_creatine.png",
+    },
   ],
 };
 
-
 // Function to convert category name to slug format
-const slugify = (text: string) => text.toLowerCase().replace(/\s+/g, "-").replace(/[^a-z0-9-]/g, "");
+const slugify = (text: string) =>
+  text
+    .toLowerCase()
+    .replace(/\s+/g, "-")
+    .replace(/[^a-z0-9-]/g, "");
 
 export default function SupplementsSection() {
   return (
@@ -91,7 +267,7 @@ export default function SupplementsSection() {
                     key={product.id}
                     initial={{ opacity: 0, scale: 0.9 }}
                     animate={{ opacity: 1, scale: 1 }}
-                    whileHover={{ scale: 1.05}}
+                    whileHover={{ scale: 1.05 }}
                     transition={{ duration: 0.1, ease: "easeOut" }}
                     className="w-[220px] h-[330px] flex flex-col justify-between border rounded-lg shadow-lg p-4 bg-gray-200 transition-transform duration-300 transform will-change-transform"
                     style={{ perspective: "1000px", height: "330px" }} // Prevents height changes
@@ -100,10 +276,17 @@ export default function SupplementsSection() {
                     <div className="relative w-full h-36 flex items-center justify-center">
                       <motion.div
                         initial={{ scale: 1 }}
-                        whileHover={{ scale: 1  }}
+                        whileHover={{ scale: 1 }}
                         transition={{ duration: 0.4, ease: "easeInOut" }}
                       >
-                        <Image src={product.image} alt={product.name} width={140} height={140} className="object-contain" />
+                        <Image
+                          src={product.image}
+                          alt={product.name}
+                          width={140}
+                          height={140}
+                          className="object-contain"
+                          priority
+                        />
                       </motion.div>
                       <span className="absolute top-2 left-2 bg-green-600 text-white text-xs px-2 py-1 rounded">
                         Upto {product.discount} OFF
@@ -111,10 +294,16 @@ export default function SupplementsSection() {
                     </div>
 
                     {/* Product Details */}
-                    <h3 className="text-sm font-semibold text-center mt-2">{product.name}</h3>
+                    <h3 className="text-sm font-semibold text-center mt-2">
+                      {product.name}
+                    </h3>
                     <div className="text-center">
-                      <p className="text-lg font-bold text-green-700">{product.price}</p>
-                      <p className="text-sm text-gray-500 line-through">{product.oldPrice}</p>
+                      <p className="text-lg font-bold text-green-700">
+                        {product.price}
+                      </p>
+                      <p className="text-sm text-gray-500 line-through">
+                        {product.oldPrice}
+                      </p>
                     </div>
                   </motion.div>
                 ))}
@@ -136,8 +325,6 @@ export default function SupplementsSection() {
     </section>
   );
 }
-
-
 
 // "use client"; // Needed for animations in Next.js
 // import Image from "next/image";
