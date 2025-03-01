@@ -50,16 +50,42 @@
 
 
 // gym-supplements-backend\src\routes\authRoutes.ts
+// import express from "express";
+// import { 
+//   registerUser, 
+//   loginUser, 
+//   getUsers, 
+//   getUserById, 
+//   updateUser, 
+//   deleteUser 
+// } from "../controllers/authController";
+// import { protect } from "../middleware/authMiddleware";
+
+// const router = express.Router();
+
+// // Authentication routes
+// router.post("/register", registerUser);
+// router.post("/login", loginUser);
+
+// // CRUD routes (Protected)
+// router.get("/users", protect, getUsers);         // Get all users (Requires auth)
+// router.get("/users/:id", protect, getUserById);  // Get user by ID (Requires auth)
+// router.put("/users/:id", protect, updateUser);   // Update user (Requires auth)
+// router.delete("/users/:id", protect, deleteUser); // Delete user (Requires auth)
+
+// export default router;
+
+
 import express from "express";
-import { 
-  registerUser, 
-  loginUser, 
-  getUsers, 
-  getUserById, 
-  updateUser, 
-  deleteUser 
+import {
+  registerUser,
+  loginUser,
+  getUsers,
+  getUserById,
+  updateUser,
+  deleteUser
 } from "../controllers/authController";
-import { protect } from "../middleware/authMiddleware";
+import { protect } from "../middleware/authMiddleware"; // Ensure this is imported only once
 
 const router = express.Router();
 

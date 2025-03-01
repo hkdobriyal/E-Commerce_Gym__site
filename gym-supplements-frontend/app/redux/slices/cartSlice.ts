@@ -115,7 +115,7 @@
 // export const { addToCart, removeFromCart, updateQuantity, clearCart } = cartSlice.actions;
 // export default cartSlice.reducer;
 
-
+// gym-supplements-frontend\app\redux\slices\cartSlice.ts
 "use client";
 
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";

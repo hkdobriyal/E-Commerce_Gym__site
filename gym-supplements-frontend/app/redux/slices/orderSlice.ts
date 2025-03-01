@@ -1,3 +1,4 @@
+// gym-supplements-frontend\app\redux\slices\orderSlice.ts
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
 interface Order {
