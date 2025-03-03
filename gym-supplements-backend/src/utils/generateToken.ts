@@ -1,3 +1,4 @@
+// gym-supplements-backend\src\utils\generateToken.ts
 import jwt from "jsonwebtoken";
 
 const generateToken = (id: number) => {

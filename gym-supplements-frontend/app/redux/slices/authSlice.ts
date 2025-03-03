@@ -7,18 +7,21 @@
 // }
 
 // const initialState: AuthState = {
-//   token: typeof window !== "undefined" ? localStorage.getItem("token") : null,
-//   user: typeof window !== "undefined"
-//     ? localStorage.getItem("user") && localStorage.getItem("user") !== "undefined"
-//       ? JSON.parse(localStorage.getItem("user")!)
-//       : null
-//     : null,
+//   token: null,
+//   user: null,
 // };
 
 // const authSlice = createSlice({
 //   name: "auth",
 //   initialState,
 //   reducers: {
+//     hydrateAuthState: (state) => {
+//       if (typeof window !== "undefined") {
+//         state.token = localStorage.getItem("token");
+//         const user = localStorage.getItem("user");
+//         state.user = user && user !== "undefined" ? JSON.parse(user) : null;
+//       }
+//     },
 //     setUser: (state, action: PayloadAction<any>) => {
 //       state.user = action.payload;
 //       localStorage.setItem("user", JSON.stringify(action.payload));
@@ -40,15 +43,13 @@
 //   },
 // });
 
-// export const { setUser, setToken, logout } = authSlice.actions;
+// export const { setUser, setToken, logout, hydrateAuthState } = authSlice.actions;
 // export default authSlice.reducer;
 
 
-// -------------------------------above code works fine --------------------------------------------
 
-
-// gym-supplements-frontend\app\redux\slices\authSlice.ts
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import axios from "axios";
 
 interface AuthState {
   token: string | null;
@@ -94,3 +95,29 @@ const authSlice = createSlice({
 
 export const { setUser, setToken, logout, hydrateAuthState } = authSlice.actions;
 export default authSlice.reducer;
+
+// Thunk for verifying token and fetching user data
+export const verifyTokenAndFetchUser = () => async (dispatch: any, getState: any) => {
+  const state = getState();
+  const token = state.auth.token;
+
+  if (token) {
+    try {
+      const response = await axios.post(
+        "http://localhost:5000/api/auth/verify-token",
+        { token },
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        }
+      );
+      if (response.data.valid) {
+        dispatch(setUser(response.data.user));
+      }
+    } catch (error) {
+      console.error("Error verifying token:", error);
+      dispatch(logout()); // Logout if token is invalid
+    }
+  }
+};
