@@ -1,12 +1,13 @@
 // gym-supplements-backend\src\routes\productRoutes.ts
 import express from "express";
-import { getProducts, getProductById } from "../controllers/productController";
+import { getProducts, getProductById ,searchProducts } from "../controllers/productController";
 import pool from "../config/db";
 
 const router = express.Router();
 
 router.get("/", getProducts);
 router.get("/:id", getProductById);
+router.get('/search', searchProducts);
 
 router.post("/insert", async (req, res) => {
   const products = [

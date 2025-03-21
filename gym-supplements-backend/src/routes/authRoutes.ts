@@ -25,7 +25,7 @@
 // export default router;
 
 
-
+// gym-supplements-backend\src\routes\authRoutes.ts
 import express from "express";
 import {
   registerUser,

@@ -1,85 +1,104 @@
+// // // // import { configureStore } from "@reduxjs/toolkit";
+// // // // import { persistStore, persistReducer } from "redux-persist";
+// // // // import storage from "redux-persist/lib/storage";
+// // // // import authReducer from "./slices/authSlice";
+// // // // import cartReducer from "./slices/cartSlice";
+// // // // import orderReducer from "./slices/orderSlice";
+
+// // // // const persistConfig = {
+// // // //   key: "root",
+// // // //   storage,
+// // // //   whitelist: ["auth", "cart"], // Persist both auth and cart state
+// // // // };
+
+// // // // const persistedAuthReducer = persistReducer(persistConfig, authReducer);
+// // // // const persistedCartReducer = persistReducer(persistConfig, cartReducer);
+
+// // // // export const store = configureStore({
+// // // //   reducer: {
+// // // //     auth: persistedAuthReducer,
+// // // //     cart: persistedCartReducer,
+// // // //     order: orderReducer,
+// // // //   },
+// // // //   middleware: getDefaultMiddleware =>
+// // // //     getDefaultMiddleware({
+// // // //       serializableCheck: {
+// // // //         ignoredActions: ['persist/PERSIST'],
+// // // //         ignoredActionPaths: ['meta.arg', 'payload.timestamp'],
+// // // //         ignoredPaths: ['items.dates'],
+// // // //       },
+// // // //     }),
+// // // // });
+
+// // // // export const persistor = persistStore(store);
+// // // // export type RootState = ReturnType<typeof store.getState>;
+// // // // export type AppDispatch = typeof store.dispatch;
+
+// // // // gym-supplements-frontend\app\redux\store.ts
 // // // import { configureStore } from "@reduxjs/toolkit";
+// // // import { persistStore, persistReducer } from "redux-persist";
+// // // import storage from "redux-persist/lib/storage";
+// // // import authReducer from "./slices/authSlice";
 // // // import cartReducer from "./slices/cartSlice";
-// // // import authReducer from "./slices/authSlice"; // ✅ Import auth slice
+// // // import orderReducer from "./slices/orderSlice";
+
+// // // const persistConfig = {
+// // //   key: "root",
+// // //   storage,
+// // //   whitelist: ["auth", "cart"], // Persist both auth and cart state
+// // // };
+
+// // // const persistedAuthReducer = persistReducer(persistConfig, authReducer);
+// // // const persistedCartReducer = persistReducer(persistConfig, cartReducer);
 
 // // // export const store = configureStore({
 // // //   reducer: {
-// // //     cart: cartReducer,
-// // //     auth: authReducer, // ✅ Add auth reducer
+// // //     auth: persistedAuthReducer,
+// // //     cart: persistedCartReducer,
+// // //     order: orderReducer,
 // // //   },
+// // //   middleware: getDefaultMiddleware =>
+// // //     getDefaultMiddleware({
+// // //       serializableCheck: {
+// // //         ignoredActions: ['persist/PERSIST'],
+// // //         ignoredActionPaths: ['meta.arg', 'payload.timestamp'],
+// // //         ignoredPaths: ['items.dates'],
+// // //       },
+// // //     }),
 // // // });
 
+// // // export const persistor = persistStore(store);
 // // // export type RootState = ReturnType<typeof store.getState>;
 // // // export type AppDispatch = typeof store.dispatch;
 
 // // // gym-supplements-frontend\app\redux\store.ts
-// // import { configureStore } from '@reduxjs/toolkit';
-// // import authReducer from './slices/authSlice';
-// // import cartReducer from './slices/cartSlice';
-
-// // const store = configureStore({
-// //   reducer: {
-// //     auth: authReducer,
-// //     cart: cartReducer,
-// //   },
-// // });
-
-// // export type RootState = ReturnType<typeof store.getState>;
-// // export default store;
-
-// // gym-supplements-frontend\app\redux\store.ts
 // // import { configureStore } from "@reduxjs/toolkit";
 // // import { persistStore, persistReducer } from "redux-persist";
 // // import storage from "redux-persist/lib/storage";
 // // import authReducer from "./slices/authSlice";
-// // import cartReducer from "./slices/cartSlice"; // Keeping your cart functionality
+// // import cartReducer from "./slices/cartSlice";
+// // import orderReducer from "./slices/orderSlice";
 
 // // const persistConfig = {
-// //   key: "auth",
+// //   key: "root",
 // //   storage,
-// //   whitelist: ["auth"], // Persist only auth state
+// //   whitelist: ["auth", "cart"], // Persist both auth and cart state
 // // };
 
 // // const persistedAuthReducer = persistReducer(persistConfig, authReducer);
+// // const persistedCartReducer = persistReducer(persistConfig, cartReducer);
 
 // // export const store = configureStore({
 // //   reducer: {
-// //     auth: persistedAuthReducer, // Persisted authentication
-// //     cart: cartReducer, // Keeping your cart reducer unchanged
-// //   },
-// // });
-
-// // export const persistor = persistStore(store);
-// // export type RootState = ReturnType<typeof store.getState>;
-// // export type AppDispatch = typeof store.dispatch;
-
-// // import { configureStore } from "@reduxjs/toolkit";
-// // import { persistStore, persistReducer } from "redux-persist";
-// // import storage from "redux-persist/lib/storage";
-// // import authReducer from "./slices/authSlice";
-// // import cartReducer from "./slices/cartSlice"; // Keeping your cart functionality
-
-// // const persistConfig = {
-// //   key: "auth",
-// //   storage,
-// //   whitelist: ["auth"], // Persist only auth state
-// // };
-
-// // const persistedAuthReducer = persistReducer(persistConfig, authReducer);
-
-// // export const store = configureStore({
-// //   reducer: {
-// //     auth: persistedAuthReducer, // Persisted authentication
-// //     cart: cartReducer, // Keeping your cart reducer unchanged
+// //     auth: persistedAuthReducer,
+// //     cart: persistedCartReducer,
+// //     order: orderReducer,
 // //   },
 // //   middleware: getDefaultMiddleware =>
 // //     getDefaultMiddleware({
 // //       serializableCheck: {
-// //         // Ignore these action types
 // //         ignoredActions: ['persist/PERSIST'],
-// //         // Ignore these field paths in all actions
 // //         ignoredActionPaths: ['meta.arg', 'payload.timestamp'],
-// //         // Ignore these paths in the state
 // //         ignoredPaths: ['items.dates'],
 // //       },
 // //     }),
@@ -89,37 +108,34 @@
 // // export type RootState = ReturnType<typeof store.getState>;
 // // export type AppDispatch = typeof store.dispatch;
 
-
 // // gym-supplements-frontend\app\redux\store.ts
-// import { configureStore } from "@reduxjs/toolkit";
+// import { configureStore, getDefaultMiddleware } from "@reduxjs/toolkit";
 // import { persistStore, persistReducer } from "redux-persist";
 // import storage from "redux-persist/lib/storage";
 // import authReducer from "./slices/authSlice";
-// import cartReducer from "./slices/cartSlice"; // Keeping your cart functionality
-// import orderReducer from "./slices/orderSlice"; // Import the order slice
+// import cartReducer from "./slices/cartSlice";
+// import orderReducer from "./slices/orderSlice";
 
 // const persistConfig = {
-//   key: "auth",
+//   key: "root",
 //   storage,
-//   whitelist: ["auth"], // Persist only auth state
+//   whitelist: ["auth", "cart"],
 // };
 
 // const persistedAuthReducer = persistReducer(persistConfig, authReducer);
+// const persistedCartReducer = persistReducer(persistConfig, cartReducer);
 
 // export const store = configureStore({
 //   reducer: {
-//     auth: persistedAuthReducer, // Persisted authentication
-//     cart: cartReducer, // Keeping your cart reducer unchanged
-//     order: orderReducer, // Add the order reducer
+//     auth: persistedAuthReducer,
+//     cart: persistedCartReducer,
+//     order: orderReducer,
 //   },
 //   middleware: getDefaultMiddleware =>
 //     getDefaultMiddleware({
 //       serializableCheck: {
-//         // Ignore these action types
 //         ignoredActions: ['persist/PERSIST'],
-//         // Ignore these field paths in all actions
 //         ignoredActionPaths: ['meta.arg', 'payload.timestamp'],
-//         // Ignore these paths in the state
 //         ignoredPaths: ['items.dates'],
 //       },
 //     }),
@@ -131,36 +147,33 @@
 
 
 
-// gym-supplements-frontend\app\redux\store.ts
-import { configureStore } from "@reduxjs/toolkit";
+import { configureStore, getDefaultMiddleware } from "@reduxjs/toolkit";
 import { persistStore, persistReducer } from "redux-persist";
 import storage from "redux-persist/lib/storage";
 import authReducer from "./slices/authSlice";
-import cartReducer from "./slices/cartSlice"; // Ensure this import is correct
-import orderReducer from "./slices/orderSlice"; // Import the order slice if needed
+import cartReducer from "./slices/cartSlice";
+import orderReducer from "./slices/orderSlice";
 
 const persistConfig = {
-  key: "auth",
+  key: "root",
   storage,
-  whitelist: ["auth"], // Persist only auth state
+  whitelist: ["auth", "cart"],
 };
 
 const persistedAuthReducer = persistReducer(persistConfig, authReducer);
+const persistedCartReducer = persistReducer(persistConfig, cartReducer);
 
 export const store = configureStore({
   reducer: {
-    auth: persistedAuthReducer, // Persisted authentication
-    cart: cartReducer, // Cart reducer for managing cart state
-    order: orderReducer, // Add the order reducer if needed
+    auth: persistedAuthReducer,
+    cart: persistedCartReducer,
+    order: orderReducer,
   },
   middleware: getDefaultMiddleware =>
     getDefaultMiddleware({
       serializableCheck: {
-        // Ignore these action types
         ignoredActions: ['persist/PERSIST'],
-        // Ignore these field paths in all actions
         ignoredActionPaths: ['meta.arg', 'payload.timestamp'],
-        // Ignore these paths in the state
         ignoredPaths: ['items.dates'],
       },
     }),

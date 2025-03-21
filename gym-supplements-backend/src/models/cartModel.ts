@@ -1,3 +1,4 @@
+// gym-supplements-backend\src\models\cartModel.ts
 export interface CartItem {
     id?: number;
     user_id: number;

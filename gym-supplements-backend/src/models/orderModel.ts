@@ -1,3 +1,4 @@
+// gym-supplements-backend\src\models\orderModel.ts
 export interface Order {
     id?: number;
     user_id: number;

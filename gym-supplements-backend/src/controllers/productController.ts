@@ -45,3 +45,33 @@ export const getProductById: RequestHandler = async (req, res): Promise<void> =>
     res.status(500).json({ message: "Server error" });
   }
 };
+
+
+export const updateStock = async (productId: number, quantity: number) => {
+  try {
+    await pool.query(
+      'UPDATE products SET stock = stock - ? WHERE id = ?',
+      [quantity, productId]
+    );
+  } catch (error) {
+    console.error('Error updating stock:', error);
+    throw new Error('Stock update failed');
+  }
+};
+
+
+export const searchProducts = async (req: Request, res: Response) => {
+  const { query } = req.query;
+
+  try {
+    const [products]: any = await pool.query(
+      'SELECT * FROM products WHERE name LIKE ?',
+      [`%${query}%`]
+    );
+
+    res.status(200).json(products);
+  } catch (error) {
+    console.error('Error searching products:', error);
+    res.status(500).json({ message: 'Server error' });
+  }
+};

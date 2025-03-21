@@ -21,4 +21,3 @@ export const getUsers = async (token: string) => {
   });
 };
 
-// Add other API functions as needed

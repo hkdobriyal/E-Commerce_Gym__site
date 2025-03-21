@@ -16,7 +16,8 @@
 //   }
 // };
 
-// E-Commerce_Gym__site\gym-supplements-backend\src\middleware\authMiddleware.ts
+
+// gym-supplements-backend\src\middleware\authMiddleware.ts
 import { Request, Response, NextFunction } from "express";
 import jwt from "jsonwebtoken";
 import pool from "../config/db";
@@ -53,5 +54,13 @@ export const protect = async (req: AuthenticatedRequest, res: Response, next: Ne
   } else {
     res.status(401).json({ message: "Not authorized, no token" });
     return;
+  }
+};
+
+export const admin = (req: AuthenticatedRequest, res: Response, next: NextFunction) => {
+  if (req.user && req.user.role === 'admin') {
+    next();
+  } else {
+    res.status(403).json({ message: 'Admin access required' });
   }
 };

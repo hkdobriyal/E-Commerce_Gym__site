@@ -133,7 +133,7 @@
 //   }
 // };
 
-
+// gym-supplements-backend\src\controllers\authController.ts
 import { Request, Response, RequestHandler } from "express";
 import bcrypt from "bcryptjs";
 import pool from "../config/db";
