@@ -26,10 +26,10 @@ export default function Wishlist() {
     }
   }, []);
 
-  // Save wishlist to localStorage whenever it changes
-  useEffect(() => {
-    localStorage.setItem("wishlist", JSON.stringify(wishlist));
-  }, [wishlist]);
+  // // Save wishlist to localStorage whenever it changes
+  // useEffect(() => {
+  //   localStorage.setItem("wishlist", JSON.stringify(wishlist));
+  // }, [wishlist]);
 
   // Remove item from wishlist
   const removeFromWishlist = (id: number) => {
